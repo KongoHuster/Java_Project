@@ -7,8 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        double[][] array1 = {{2, 1, -5, 1}, {1, -3, 0, -6}, {0, 2, -1, 2}, {1, 4, -7, 6}};
-        double[][] array2 = {{8}, {9}, {-5}, {0}};
+        double[][] array1 = {{2, 1, -5, 1}, {1, -3, 0, -6}, {8, 2, -1, 2}, {0, 2, -1, 2}};
+        double[][] array2 = {{8}, {9}, {-5}, {-9}};
 
         double[] result = Solve_Equations(array1, array2);
         for (int k =0; k < result.length; k += 1)
@@ -38,7 +38,7 @@ public class Main {
         //判断常数项矩阵是否与系数矩阵长度相同
         if(arrayB.length != arrayA.length)
         {
-            System.out.print("arrayA's row and arrayB's row is not equal.");
+            System.out.print("arrayA's row and arrayB's row is not equal.\n");
             double[] arrayZero = {0};
             return arrayZero;
         }
@@ -49,7 +49,7 @@ public class Main {
         //判断系数矩阵的值是否为0，为0则说明方程组没有解
         if(matrixA.det() == 0)
         {
-            System.out.print("The rank of arrayA is 0.");
+            System.out.print("The rank of arrayA is 0.\n");
             double[] arrayZero = {0};
             return arrayZero;
         }
@@ -60,7 +60,7 @@ public class Main {
 
         if(matrixA.rank() != matrixAdd.rank())
         {
-            System.out.print("These equations do not have solution");
+            System.out.print("These equations do not have solution.\n");
             double[] arrayZero = {0};
             return arrayZero;
         }
